@@ -7,21 +7,45 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
+#import "TableViewCell.h"
+#import "Status.h"
+@interface ViewController ()<UITableViewDataSource>
+@property(nonatomic,strong)UITableView* tableView;
+@property(nonatomic,strong)NSArray* status;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+-(UITableView *)tableView{
+    if (_tableView==nil) {
+        _tableView=[[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        [self.view addSubview:_tableView];
+    }
+    return _tableView;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSArray *)status{
+    if (_status==nil) {
+        _status=[Status status];
+    }
+    return _status;
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
+#pragma mark-tableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.status.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString* identifier=@"Cell";
+    TableViewCell* cell=[tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell==nil) {
+        cell=[[TableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    return cell;
 }
 
 @end

@@ -16,6 +16,9 @@
 		CF51F8941CBBC6170048E8E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF51F8921CBBC6170048E8E7 /* LaunchScreen.storyboard */; };
 		CF51F89F1CBBC6170048E8E7 /* SinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF51F89E1CBBC6170048E8E7 /* SinaTests.m */; };
 		CF51F8AA1CBBC6170048E8E7 /* SinaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF51F8A91CBBC6170048E8E7 /* SinaUITests.m */; };
+		CF51F8B81CBBC71A0048E8E7 /* statuses.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF51F8B71CBBC71A0048E8E7 /* statuses.plist */; };
+		CF51F8BB1CBBC74C0048E8E7 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = CF51F8BA1CBBC74C0048E8E7 /* Status.m */; };
+		CF51F8BE1CBBC7CB0048E8E7 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF51F8BD1CBBC7CB0048E8E7 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		CF51F8A51CBBC6170048E8E7 /* SinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF51F8A91CBBC6170048E8E7 /* SinaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinaUITests.m; sourceTree = "<group>"; };
 		CF51F8AB1CBBC6170048E8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF51F8B71CBBC71A0048E8E7 /* statuses.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statuses.plist; sourceTree = "<group>"; };
+		CF51F8B91CBBC74C0048E8E7 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		CF51F8BA1CBBC74C0048E8E7 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		CF51F8BC1CBBC7CB0048E8E7 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		CF51F8BD1CBBC7CB0048E8E7 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,11 @@
 		CF51F8811CBBC6170048E8E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF51F8B91CBBC74C0048E8E7 /* Status.h */,
+				CF51F8BA1CBBC74C0048E8E7 /* Status.m */,
+				CF51F8BC1CBBC7CB0048E8E7 /* TableViewCell.h */,
+				CF51F8BD1CBBC7CB0048E8E7 /* TableViewCell.m */,
+				CF51F8B71CBBC71A0048E8E7 /* statuses.plist */,
 				CF51F8821CBBC6170048E8E7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -249,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF51F8B81CBBC71A0048E8E7 /* statuses.plist in Resources */,
 				CF51F8941CBBC6170048E8E7 /* LaunchScreen.storyboard in Resources */,
 				CF51F8911CBBC6170048E8E7 /* Assets.xcassets in Resources */,
 				CF51F88C1CBBC6170048E8E7 /* Main.storyboard in Resources */,
@@ -277,8 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF51F88F1CBBC6170048E8E7 /* Sina.xcdatamodeld in Sources */,
+				CF51F8BE1CBBC7CB0048E8E7 /* TableViewCell.m in Sources */,
 				CF51F8891CBBC6170048E8E7 /* ViewController.m in Sources */,
 				CF51F8861CBBC6170048E8E7 /* AppDelegate.m in Sources */,
+				CF51F8BB1CBBC74C0048E8E7 /* Status.m in Sources */,
 				CF51F8831CBBC6170048E8E7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
