@@ -20,6 +20,7 @@ if (_headImageView==nil) {
 -(UIImageView *)vipImageView{
     if (_vipImageView==nil) {
         _vipImageView=[[UIImageView alloc]init];
+        _vipImageView.image=[UIImage imageNamed:@"vip"];
         [self.contentView addSubview:_vipImageView];
     }
     return _vipImageView;
@@ -42,6 +43,7 @@ if (_headImageView==nil) {
 -(UILabel *)textxLabel{
     if (_textxLabel==nil) {
         _textxLabel=[[UILabel alloc]init];
+        _textxLabel.numberOfLines=0;
         _textxLabel.font=[UIFont systemFontOfSize:14];
         [self.contentView addSubview:_textxLabel];
     }
@@ -70,7 +72,7 @@ if (_headImageView==nil) {
     }
 
     //设置VIP的显示，名字是否红名
-    self.vipImageView.hidden=(self.statusF.status.vip==0);
+    self.vipImageView.hidden=[self.statusF.status.vip isEqual:@0];
     if (self.vipImageView.hidden) {
         self.nameLabel.textColor=[UIColor blackColor];
     }else{

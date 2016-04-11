@@ -17,6 +17,8 @@
 @property(nonatomic,assign,readonly)CGRect detailImageViewFrame;
 
 @property(nonatomic,strong)Status* status;
+@property(nonatomic)CGFloat cellHight;
 
 +(NSArray*)statusFrame;
+
 @end

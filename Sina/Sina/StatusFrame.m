@@ -28,7 +28,19 @@
         _vipImageViewFrame=CGRectMake(CGRectGetMaxX(self.nameLabelFrame)+padding, nameRect.origin.y, 14, 14);
     }
     //设置正文
-    
+    NSDictionary* textDict=@{NSFontAttributeName:[UIFont systemFontOfSize:14]};
+    CGRect textRect=[self.status.text boundingRectWithSize:CGSizeMake(300, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:textDict context:nil];
+    textRect.origin.x=10;
+    textRect.origin.y=CGRectGetMaxY(self.headImageViewFrame)+padding;
+    _textxLabelFrame=textRect;
+    //设置图片
+    if (self.status.picture.length>0) {
+        _detailImageViewFrame=CGRectMake(10, CGRectGetMaxY(self.textxLabelFrame)+padding, 100, 100);
+        //取得行高
+        _cellHight=CGRectGetMaxY(self.detailImageViewFrame)+padding;
+    }else{
+        _cellHight=CGRectGetMaxY(self.textxLabelFrame)+padding;
+    }
     
 }
 +(NSArray*)statusFrame{

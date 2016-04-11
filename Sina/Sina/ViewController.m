@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "TableViewCell.h"
 #import "StatusFrame.h"
-@interface ViewController ()<UITableViewDataSource>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView* tableView;
 @property(nonatomic,strong)NSArray* status;
 @end
@@ -19,6 +19,8 @@
 -(UITableView *)tableView{
     if (_tableView==nil) {
         _tableView=[[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate=self;
+        _tableView.dataSource=self;
         [self.view addSubview:_tableView];
     }
     return _tableView;
@@ -32,7 +34,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self tableView];
 }
 #pragma mark-tableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -45,7 +47,13 @@
     if (cell==nil) {
         cell=[[TableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.statusF=self.status[indexPath.row];
     return cell;
 }
 
+#pragma mark-tableViewDelegate
+//设置行高
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.status[indexPath.row] cellHight];
+}
 @end
