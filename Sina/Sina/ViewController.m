@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "TableViewCell.h"
-#import "Status.h"
+#import "StatusFrame.h"
 @interface ViewController ()<UITableViewDataSource>
 @property(nonatomic,strong)UITableView* tableView;
 @property(nonatomic,strong)NSArray* status;
@@ -26,7 +26,7 @@
 
 -(NSArray *)status{
     if (_status==nil) {
-        _status=[Status status];
+        _status=[StatusFrame statusFrame];
     }
     return _status;
 }

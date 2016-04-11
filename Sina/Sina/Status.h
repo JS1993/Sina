@@ -13,5 +13,7 @@
 @property(copy,nonatomic)NSString* icon;
 @property(copy,nonatomic)NSString* name;
 @property(copy,nonatomic)NSNumber* vip;
-+(NSArray*)status;
+@property(copy,nonatomic)NSString* picture;
+
++(instancetype)statusWithDict:(NSDictionary*)dict;
 @end

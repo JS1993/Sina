@@ -9,16 +9,6 @@
 #import "TableViewCell.h"
 
 @implementation TableViewCell
-//-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-//    
-//}
-//-(void)setStatus:(Status *)status{
-//    _status=status;
-//    self.headImageView.image=[UIImage imageNamed:status.icon];
-//    self.nameLabel.text=status.name;
-//    self.textxLabel.text=status.text;
-//    self.vipImageView.image=[UIImage imageNamed:@"vip"];
-//}
 -(UIImageView *)headImageView
 {
 if (_headImageView==nil) {
@@ -57,15 +47,47 @@ if (_headImageView==nil) {
     }
     return _textxLabel;
 }
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+
+-(void)setStatusF:(StatusFrame *)statusF{
+    _statusF=statusF;
+    //1.载入数据
+    [self loadModel];
+    //2.设置位置
+    [self setFrame];
 }
+/**
+ *  设置数据
+ */
+-(void)loadModel{
+    
+    self.headImageView.image=[UIImage imageNamed:self.statusF.status.icon];
+    self.nameLabel.text=self.statusF.status.name;
+    self.textxLabel.text=self.statusF.status.text;
+    //设置picture
+    self.detailImageView.hidden=(self.statusF.status.picture==0);
+    if (!self.detailImageView.hidden) {
+        self.detailImageView.image=[UIImage imageNamed:self.statusF.status.picture];
+    }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    //设置VIP的显示，名字是否红名
+    self.vipImageView.hidden=(self.statusF.status.vip==0);
+    if (self.vipImageView.hidden) {
+        self.nameLabel.textColor=[UIColor blackColor];
+    }else{
+        self.nameLabel.textColor=[UIColor redColor];
+    }
+    
 }
-
+/**
+ *  设置位置
+ */
+-(void)setFrame{
+    self.headImageView.frame=self.statusF.headImageViewFrame;
+    self.nameLabel.frame=self.statusF.nameLabelFrame;
+    self.vipImageView.frame=self.statusF.vipImageViewFrame;
+    self.textxLabel.frame=self.statusF.textxLabelFrame;
+    if (self.statusF.status.picture.length>0) {
+        self.detailImageView.frame=self.statusF.detailImageViewFrame;
+    }
+}
 @end

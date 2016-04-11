@@ -19,13 +19,5 @@
 +(instancetype)statusWithDict:(NSDictionary*)dict{
     return [[self alloc]initWithDict:dict];
 }
-+(NSArray*)status{
-    NSMutableArray* arrM=[NSMutableArray array];
-    NSArray* arr=[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"statuses" ofType:@"plist"]];
-    for (NSDictionary* dic in arr ) {
-        [arrM addObject:[self statusWithDict:dic]];
-    }
-    return arrM;
-}
 
 @end

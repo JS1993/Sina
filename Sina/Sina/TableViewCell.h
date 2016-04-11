@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Status.h"
+#import "StatusFrame.h"
+
 @interface TableViewCell : UITableViewCell
 @property(strong,nonatomic)UIImageView* headImageView;
 @property(strong,nonatomic)UILabel* nameLabel;
@@ -15,5 +16,5 @@
 @property(strong,nonatomic)UILabel* textxLabel;
 @property(strong,nonatomic)UIImageView* detailImageView;
 
-@property(strong,nonatomic)Status* status;
+@property(strong,nonatomic)StatusFrame* statusF;
 @end
